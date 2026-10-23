@@ -1,0 +1,26 @@
+body{
+    text-align:center;
+    background-image : url("images.jpg");
+    background-size : cover;
+    color:white;
+    font-weight:bold;
+}
+h1{
+    color:goldenrod;
+}
+#message-el{
+    font-style:italic;
+}
+.btw{
+    background:goldenrod;
+    width:150px;
+    color:#016f32;
+    font-weight:bold;
+    padding:5px;
+    border:none;
+    border-radius:2px;
+}
+#sg{
+    display:block;
+    margin:10px auto;
+}
