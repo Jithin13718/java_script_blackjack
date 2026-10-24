@@ -1,14 +1,29 @@
-let firstcard = 14
-let secondcard = 7
-let cards = [firstcard,secondcard]
-let sum = firstcard+secondcard
+
+let cards = []
+let sum = 0
 let isblackjack = false
-let isAlive = true
+let isAlive =  false
 let message = "" 
 let msgEl = document.getElementById("message-el")
 let sumel = document.getElementById("sum-el")
 let cardsel = document.getElementById("cards-el") 
+
+function getRandom(){
+    let randomnum = Math.floor(Math.random() * 13)+1
+    if(randomnum === 1){
+        return 11
+    }else if(randomnum >10 ){
+        return 10 
+    }else{
+        return randomnum 
+    }
+}
 function startGame(){
+    isAlive = true
+    let firstcard = getRandom()
+    let secondcard = getRandom()
+    cards = [firstcard,secondcard]
+    sum = firstcard+secondcard
     renderGame()
 }
 function renderGame(){
@@ -23,7 +38,6 @@ function renderGame(){
     }else if(sum === 21){
         message = "You won the blackjack"
         isblackjack = true
-        isAlive = true
     }else{
         message = "You lost the game"
         isAlive = false
@@ -33,16 +47,17 @@ function renderGame(){
 
 function newCard(){
     console.log("Drawing a new deck of card")
-    let card = 8
-    sum+=card
-    cards.push(card)
-    renderGame();
+    if(isAlive === true && isblackjack=== false){
+        let card = getRandom()
+        sum+=card
+        cards.push(card)
+        renderGame();
+    }
 }
 
-console.log(cards)
+// // console.log(cards)
 // let messages = ["hi i am jithin","this is a new way","log out"]
-// let newmessage = messages
-// messages.push(newmessage)
-// messages.pop(messages.length-1)
-// console.log(messages)
+// for(let i=0;i<messages.length;i++){
+//     console.log(messages[i])
+// }
 
