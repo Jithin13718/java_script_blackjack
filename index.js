@@ -1,4 +1,12 @@
 
+let player ={
+    name: "jithin",
+    chips:45,
+    sayhello: function(){
+        console.log("hi")
+    }
+}
+console.log(player.sayhello( ))
 let cards = []
 let sum = 0
 let isblackjack = false
@@ -7,6 +15,8 @@ let message = ""
 let msgEl = document.getElementById("message-el")
 let sumel = document.getElementById("sum-el")
 let cardsel = document.getElementById("cards-el") 
+let playerel = document.getElementById("player-el")
+playerel.textContent = player.name + ": $" + player.chips
 
 function getRandom(){
     let randomnum = Math.floor(Math.random() * 13)+1
